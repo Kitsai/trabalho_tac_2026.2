@@ -1,0 +1,11 @@
+services:
+  rocketmq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/kitsai/team-rocket-hq:1.0
+    platform: linux/amd64
+    ports:
+      - "80:80"
+      - "47280:47280"
+      - "47293:47293"

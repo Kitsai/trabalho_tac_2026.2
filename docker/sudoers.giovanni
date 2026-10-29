@@ -1,0 +1,8 @@
+# /etc/sudoers.d/giovanni
+#
+# Deliberate misconfiguration: secure_path is overridden per-user and lists
+# a directory giovanni owns FIRST. Whatever report.sh invokes by bare name
+# (e.g. "tar") resolves to giovanni's own binary before the real one.
+Defaults:giovanni secure_path="/opt/giovanni-tools/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+
+giovanni ALL=(root) NOPASSWD: /opt/giovanni-tools/report.sh

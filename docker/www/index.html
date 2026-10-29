@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>T.R. Comms Relay &mdash; Internal Ops</title>
+<style>
+  :root {
+    --bg: #0d0f14;
+    --panel: #161a22;
+    --red: #e3350d;
+    --red-dim: #8a2008;
+    --text: #e8e8e8;
+    --muted: #8a8f9c;
+    --ok: #35c46a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Courier New", Consolas, monospace;
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+  }
+  .card {
+    width: 100%;
+    max-width: 640px;
+    background: var(--panel);
+    border: 1px solid var(--red-dim);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(227, 53, 13, 0.08);
+  }
+  .banner {
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dim) 100%);
+    padding: 1.4rem 1.6rem;
+  }
+  .banner .star { letter-spacing: 0.3em; font-size: 0.75rem; opacity: 0.85; }
+  .banner h1 { margin: 0.3rem 0 0; font-size: 1.4rem; letter-spacing: 0.04em; }
+  .banner p { margin: 0.4rem 0 0; font-size: 0.85rem; opacity: 0.9; }
+  .body { padding: 1.6rem; }
+  .body p { color: var(--muted); line-height: 1.6; font-size: 0.92rem; }
+  .status { margin-top: 1.2rem; border-top: 1px dashed #2a2f3a; padding-top: 1.2rem; }
+  .status h2 { font-size: 0.78rem; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 0.8rem; text-transform: uppercase; }
+  .row { display: flex; justify-content: space-between; padding: 0.45rem 0; font-size: 0.88rem; border-bottom: 1px solid #1f2430; }
+  .row:last-child { border-bottom: none; }
+  .badge { font-size: 0.75rem; padding: 0.15rem 0.55rem; border-radius: 999px; }
+  .badge.ok { background: rgba(53, 196, 106, 0.12); color: var(--ok); border: 1px solid rgba(53, 196, 106, 0.35); }
+  .badge.warn { background: rgba(227, 53, 13, 0.1); color: #ff8a65; border: 1px solid rgba(227, 53, 13, 0.3); }
+  footer { padding: 1rem 1.6rem 1.4rem; font-size: 0.72rem; color: #4a4f5c; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="banner">
+      <div class="star">★ ★ ★ TEAM ROCKET ★ ★ ★</div>
+      <h1>Communications Relay &mdash; Internal Ops</h1>
+      <p>Prepare for trouble. Make it double. Keep the schemes in sync worldwide.</p>
+    </div>
+    <div class="body">
+      <p>
+        This portal fronts the message relay backbone used to coordinate field
+        operations across every region HQ. All memos, balloon dispatch orders
+        and Meowth status reports pass through here before reaching the Boss's
+        desk.
+      </p>
+      <div class="status">
+        <h2>Relay Status</h2>
+        <div class="row"><span>Region Name Directory</span><span class="badge ok">ONLINE</span></div>
+        <div class="row"><span>Message Broker Cluster</span><span class="badge ok">ONLINE</span></div>
+        <div class="row"><span>Meowth Balloon Fleet</span><span class="badge warn">GROUNDED &mdash; MAINTENANCE</span></div>
+        <div class="row"><span>Jessie &amp; James Field Report</span><span class="badge warn">OVERDUE</span></div>
+      </div>
+      <div class="status">
+        <h2>Memo &mdash; From: Meowth</h2>
+        <p style="margin:0; color: var(--text); font-size: 0.85rem;">
+          "Reminded the boss again: ever since da port scanners started
+          sniffin' around headquarters, we moved the Name Directory off
+          its old spot to <strong>47280</strong>, and the Broker Cluster
+          to <strong>47293</strong>. Don't go writin' it on da bulletin
+          board dis time, James."
+        </p>
+      </div>
+    </div>
+    <footer>Internal use only. If you can read this, you're probably blasting off again soon.</footer>
+  </div>
+  <!-- memo from R&D: open-source messaging infra keeps the operating budget
+       low enough for the Boss not to ask questions. don't tell him twice. -->
+</body>
+</html>
