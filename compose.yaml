@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     image: ghcr.io/kitsai/team-rocket-hq:1.0
     platform: linux/amd64
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "80:80"
       - "47280:47280"
