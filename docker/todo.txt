@@ -1,5 +1,4 @@
 TODO (James):
 - configure the rocket service properly
-- change password from secret123 (boss told us to use those annoying
-  complexity rules now)
+- change password from secret123 (that's so annoying)
 - stop leaving notes lying around duh
