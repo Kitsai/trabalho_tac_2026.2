@@ -7,8 +7,19 @@ RUN sed -i \
   -e 's|^mirrorlist=|#mirrorlist=|g' \
   -e 's|^#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' \
   /etc/yum.repos.d/CentOS-*.repo \
-  && yum install -y sudo gcc httpd \
+  && yum install -y sudo gcc httpd openssh-server \
   && yum clean all
+
+# --- SSH, scoped to the two named users only ---------------------------------
+# No password is ever set for "rocketmq" (the RCE foothold), so it can't log
+# in over SSH regardless; james/giovanni logins only become usable once their
+# passwords are found through the box itself. Root login stays disabled.
+RUN ssh-keygen -A \
+  && sed -i \
+    -e 's/^#\?PermitRootLogin.*/PermitRootLogin no/' \
+    -e 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' \
+    /etc/ssh/sshd_config \
+  && echo "AllowUsers james giovanni" >> /etc/ssh/sshd_config
 
 # --- Thematic landing page (no exploit here, purely cosmetic) ---------------
 COPY docker/www/index.html /var/www/html/index.html
@@ -75,5 +86,5 @@ RUN echo "TAC{meowth_that_s_r1ght_unauth_rce}" > /home/rocketmq/user.txt \
 RUN echo "TAC{EQu1pe_R0cK3t_d3cOL4nd0_d3_N0vo}" > /root/root.txt \
   && chmod 400 /root/root.txt
 
-EXPOSE 80 47280 47293
+EXPOSE 80 22 47280 47293
 ENTRYPOINT ["/entrypoint.sh"]

@@ -1,8 +1,9 @@
 services:
   rocketmq:
-    image: ghcr.io/kitsai/rocket-masterquarters:1.0
+    image: ghcr.io/kitsai/rocket-masterquarters:1.1
     platform: linux/amd64
     ports:
       - "80:80"
+      - "2222:22"
       - "47280:47280"
       - "47293:47293"

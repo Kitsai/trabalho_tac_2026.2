@@ -5,6 +5,7 @@ set -e
 # as the unprivileged "rocketmq" user (the real service account -- this is
 # the user the CVE-2023-33246 RCE actually lands as).
 httpd -k start
+/usr/sbin/sshd
 
 su -s /bin/bash rocketmq -c "cd \"\$ROCKETMQ_HOME/bin\" && nohup ./mqnamesrv -c \"\$ROCKETMQ_HOME/conf/namesrv.conf\" > /home/rocketmq/namesrv.log 2>&1 &"
 
