@@ -10,3 +10,15 @@
 | Pedro Henrique Mantovani Conti | 221039245 |
 
 ## Rodando a máquina
+
+Com o pacote completo basta rodar o seguinte comando estando na pasta do projeto:
+
+```bash
+docker compose up
+```
+
+Caso tenha apenas o compose.dist.yaml utilize:
+
+```bash
+docker compose -f compose.dist.yaml up
+```
