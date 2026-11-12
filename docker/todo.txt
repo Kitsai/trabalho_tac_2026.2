@@ -2,4 +2,4 @@ TODO (James):
 - configure the rocket service properly
 - change password from secret123 (that's so annoying)
 - stop leaving notes lying around duh
-- boss left me a voicemail saying he backed up his login somewhere, never actually checked it
+- boss left me a voicemail saying he backed up his login somewhere, never actually found it

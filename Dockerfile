@@ -80,9 +80,9 @@ COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 
 # --- Flags --------------------------------------------------------------
-RUN echo "TAC{meowth_that_s_r1ght_unauth_rce}" > /home/rocketmq/user.txt \
-  && chown rocketmq:rocketmq /home/rocketmq/user.txt \
-  && chmod 400 /home/rocketmq/user.txt
+RUN echo "TAC{meowth_that_s_r1ght_unauth_rce}" > /home/james/user.txt \
+  && chown james:james /home/james/user.txt \
+  && chmod 400 /home/james/user.txt
 RUN echo "TAC{EQu1pe_R0cK3t_d3cOL4nd0_d3_N0vo}" > /root/root.txt \
   && chmod 400 /root/root.txt
 
